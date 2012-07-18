@@ -4,9 +4,11 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>CSS 3 Font-Feature-Settings OpenType demo</title>
 <link rel="stylesheet" href="screen.css" type="text/css">
-<!--
-<link rel="stylesheet" href="http://f.fontdeck.com/s/css/ojUmHFB8MiEPiY5EwXRuFBA1qpk/<?php echo $_SERVER["HTTP_HOST"] ?>/21000.css" type="text/css" />
--->
+
+<script>var domain = "<?php echo $_SERVER["HTTP_HOST"] ?>";</script>
+<script id="fontdeckjs" src="http://f.fontdeck.com/s/css/js/<?php echo $_SERVER["HTTP_HOST"] ?>/21000.js"></script>
+
+
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="controls.js"></script>
 
@@ -23,30 +25,19 @@ Lucky affluent actor asks to feast on giant 12.34" cheese-filled quiche in fjord
 
 <div id="controls">
 
+<h2>Fontdeck</h2>
+
+<h3 id="projectgroup">Project ID</h3>
+<div class="group">
+<label><input type="text" id="projectid" name="projectid" onblur="refreshProject()" value="21000" size="6" /></label>
+</div>
+
 <h2>Fonts</h2>
 
 <h3 id="typefacegroup">Typeface</h3>
 <div class="group">
 <label>
 <select id="typeface" name="typeface" onchange="refreshFont()">
-<option value="Akagi Book">Akagi</option>
-<option value="Aniuk Regular">Aniuk</option>
-<option value="Apercu Pro Regular">Aperçu Pro</option>
-<option value="Baskerville 1757 Pro Regular">Baskerville 1757</option>
-<option value="Bree Regular">Bree</option>
-<option value="Calluna Regular">Calluna</option>
-<option value="Calluna Sans Regular">Calluna Sans</option>
-<option value="FS Clerkenwell Web Regular">FS Clerkenwell Web</option>
-<option value="LFT Etica Regular">LFT Etica</option>
-<option value="Magneta Medium" selected="selected">Magneta</option>
-<option value="Museo 500">Museo</option>
-<option value="Museo Sans 500">Museo Sans</option>
-<option value="Museo Sans Rounded 500">Museo Sans Rounded</option>
-<option value="Museo Slab 500">Museo Slab</option>
-<option value="Premiera Book">Premiéra</option>
-<option value="Raisonne Demibold">Raisonne</option>
-<option value="Redisturbed Regular">Redisturbed</a></option>
-<option value="Tanger Serif Medium Regular">Tanger Serif</option>
 <option value="">-local font-</option>
 </select>
 </label>

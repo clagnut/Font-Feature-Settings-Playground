@@ -8,8 +8,8 @@ function() {
 	$('#controls h3').addClass("closed");
 	
 	// show typeface selector by default
-	$('#typefacegroup').toggleClass("closed");
-	$('#typefacegroup').next(".group").slideToggle("medium");
+	$('#typefacegroup, #projectgroup').toggleClass("closed");
+	$('#typefacegroup, #projectgroup').next(".group").slideToggle("medium");
 	
 	// show/hide control group
 	$('#controls h3').click(
@@ -46,6 +46,15 @@ var defaultOff = [
 ];
 
 var defaultOn = [ 'liga', 'kern' ];
+
+function refreshProject() {
+    alert("refreshing");
+    var projectid = document.getElementById("projectid").value;
+    var src = "http://f.fontdeck.com/s/css/js/" + domain + "/" + projectid + ".js";
+    var fontdecklink = document.getElementById("fontdeckjs");
+	fontdecklink.setAttribute("src", src);
+    init();
+}
 
 function refreshFeatures() {
 
@@ -96,7 +105,7 @@ function refreshSample() {
 
 function refreshFont() {
     var typefaceSelect = document.getElementById("typeface");
-    if ((typefaceSelect.selectedIndex + 1) == typefaceSelect.options.length) {
+    if ((typefaceSelect.selectedIndex) == 0) {
         $('#otherfont').show();
     } else {
         $('#otherfont').hide();    
@@ -108,3 +117,31 @@ function refreshOther() {
     document.getElementById("font").value = document.getElementById("otherfont").value;
     refreshSample();
 }
+
+function getFamilies() {
+	var all_styles = document.getElementsByTagName('style');
+	var fontdeck_style = all_styles[0];
+	var style_rules = fontdeck_style.childNodes[0].nodeValue;
+	var style_rules_ar = style_rules.split("font-family:'");
+	var families = new Array();
+    
+	for (var i = 1; i < style_rules_ar.length; i++) {
+		families[i-1] = style_rules_ar[i].split("'")[0];
+    } 
+    
+    return families;  
+}
+
+function init() {
+	var families = getFamilies();
+	var typeface_select = document.getElementById("typeface");
+	for (var i = 0; i < families.length; i++) {
+		var option = document.createElement("option");
+		var family = document.createTextNode(families[i]);
+		option.appendChild(family);
+		option.setAttribute("value", families[i]);
+		typeface_select.appendChild(option);
+    }
+}
+
+window.onload = init;
