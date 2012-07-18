@@ -1,0 +1,120 @@
+body {
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Segoe UI", "Droid Sans", verdana, sans-serif;
+	font-size:11px;
+	line-height:1.09090909090909em;
+	padding:0;
+	margin:0;
+}
+
+#controls {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ededed;
+	color:#000;
+	box-shadow:1px 1px 4px rgba(0,0,0,0.4);
+	width: 19em;
+	z-index:100;
+}
+
+.dimmed {
+	opacity: 0.5;
+	-moz-transition-property: opacity;
+	-moz-transition-duration: 0.5s;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+}
+
+.dimmed:hover, .dimmed:focus {
+	opacity: 1;
+	-moz-transition-property: opacity;
+	-moz-transition-duration: 0.125s;
+	transition-property: opacity;
+	transition-duration: 0.125s;
+}
+
+.group {
+	padding: 0 12px 1.09090909090909em 25px;
+}
+h3, h2 {
+	font-size: 11px;
+	font-weight: normal;
+}
+
+h3 {
+	background: transparent url(open.png) no-repeat 13px 6px;
+	margin: 0;
+	padding: 5px 0 0.4545454545em 25px;
+	border-top: 1px solid #929292;
+	cursor: default;
+}
+
+h3.closed {
+	background-image: url(closed.png);
+}
+
+h2 {
+	text-align: center;
+	background: #bebdbe url(h2bg.png) repeat-x 0 top;
+	margin:0;
+	padding: 3px 0 2px 0;
+	text-shadow: 0 1px rgba(255,255,255,0.5);
+}
+input {
+	font-size:100%;
+	font-family:inherit;
+	margin-right: 0.545454545454545em;
+	margin-left: 0;
+}
+label {
+	display: block;
+}
+
+.experiment {
+  font-size: 72px;
+  line-height: 1.19444444444444;
+  margin-top: 0.25em;
+  margin-left:2.90277777777778em;
+  padding-left: 4%;
+}
+
+#inputForm {
+}
+
+#output {
+	background: #cecdce;
+	color:#000;
+	position: absolute;
+	z-index:10;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	box-shadow:0 -1px 3px rgba(0,0,0,0.6);
+	line-height:1.27272727272727;
+}
+
+#output p {
+	float:right;
+	padding-right: 4%;
+	margin: 0.5em 0 0 0;
+}
+
+#output p.caveat {
+	float: left;
+	width: 17em;
+	padding-left: 1em;
+	font-family:"Lucida Sans Unicode", "Segoe UI", "Droid Sans", verdana, sans-serif;
+	font-style: italic;
+}
+#output p.caveat strong {
+	display: block;
+	font-style: normal;
+	margin-top: 0.63636363636364em;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Segoe UI", "Droid Sans", verdana, sans-serif;
+	font-weight: bold;
+}
+
+#output div {
+	margin-left: 19em;
+	padding: 0.5em 0 0.5em 4%;
+}
