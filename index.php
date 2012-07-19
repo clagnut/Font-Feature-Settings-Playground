@@ -20,7 +20,7 @@ $projectid = (isset($_REQUEST["projectid"]))?$_REQUEST["projectid"]:"21000";
 <body>
 
 <div id="sampleText" class="experiment" contenteditable="">
-Lucky affluent actor asks to feast on giant 12.34" cheese-filled quiche in fjord.
+Lucky affluent actor asks to feast on giant 10.34" cheese-filled quiche in fjord.
 </div>
 
 
@@ -129,8 +129,8 @@ Lucky affluent actor asks to feast on giant 12.34" cheese-filled quiche in fjord
 
 <div id="output">
 <p><a href="http://fontdeck.com/typefaces/all/tags/opentype">OpenType-enabled webfonts from Fontdeck</a></p>
-<p class="caveat">Not fonts have all OpenType features, so just play around. Try the ligatures first.<strong>
-Only supported in Firefox 4+, IE10, Webkit/Win.</strong></p>
+<p class="caveat">No fonts have all OpenType features, so just play around. Try the ligatures first.<strong>
+Only supported in Firefox&nbsp;4+, IE10, Safari&nbsp;5.2, Webkit/Win.</strong></p>
 <div>
 -moz-font-feature-settings:<span id="mozfeatures13" contenteditable="" onkeyup="refreshSample()"></span>;
 <br />
