@@ -132,9 +132,9 @@ Lucky affluent actor asks to feast on giant 12.34" cheese-filled quiche in fjord
 <p class="caveat">Not fonts have all OpenType features, so just play around. Try the ligatures first.<strong>
 Only supported in Firefox 4+, IE10, Webkit/Win.</strong></p>
 <div>
--moz-font-feature-settings:&quot;<span id="mozfeatures" contenteditable="" onkeyup="refreshSample()"></span>&quot;;
-<br />
 -moz-font-feature-settings:<span id="mozfeatures13" contenteditable="" onkeyup="refreshSample()"></span>;
+<br />
+-moz-font-feature-settings:&quot;<span id="mozfeatures" contenteditable="" onkeyup="refreshSample()"></span>&quot;;
 <br />
 -ms-font-feature-settings:<span id="msfeatures" contenteditable="" onkeyup="refreshSample()"></span>;
 <br />
