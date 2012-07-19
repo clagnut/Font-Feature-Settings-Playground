@@ -9,7 +9,7 @@ function() {
 	
 	// show typeface selector by default
 	$('#typefacegroup, #projectgroup').toggleClass("closed");
-	$('#typefacegroup, #projectgroup').next(".group").slideToggle("medium");
+	$('#typefacegroup, #projectgroup').next(".group").show();
 	
 	// show/hide control group
 	$('#controls h3').click(
@@ -46,15 +46,6 @@ var defaultOff = [
 ];
 
 var defaultOn = [ 'liga', 'kern' ];
-
-function refreshProject() {
-    alert("refreshing");
-    var projectid = document.getElementById("projectid").value;
-    var src = "http://f.fontdeck.com/s/css/js/" + domain + "/" + projectid + ".js";
-    var fontdecklink = document.getElementById("fontdeckjs");
-	fontdecklink.setAttribute("src", src);
-    init();
-}
 
 function refreshFeatures() {
 
@@ -132,7 +123,7 @@ function getFamilies() {
     return families;  
 }
 
-function init() {
+function initFamilies() {
 	var families = getFamilies();
 	var typeface_select = document.getElementById("typeface");
 	for (var i = 0; i < families.length; i++) {
@@ -144,4 +135,4 @@ function init() {
     }
 }
 
-window.onload = init;
+window.onload = initFamilies;

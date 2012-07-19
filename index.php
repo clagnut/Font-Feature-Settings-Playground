@@ -1,3 +1,6 @@
+<?php
+$projectid = (isset($_REQUEST["projectid"]))?$_REQUEST["projectid"]:"21000"; 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +9,7 @@
 <link rel="stylesheet" href="screen.css" type="text/css">
 
 <script>var domain = "<?php echo $_SERVER["HTTP_HOST"] ?>";</script>
-<script id="fontdeckjs" src="http://f.fontdeck.com/s/css/js/<?php echo $_SERVER["HTTP_HOST"] ?>/21000.js"></script>
+<script id="fontdeckjs" src="http://f.fontdeck.com/s/css/js/<?php echo $_SERVER["HTTP_HOST"] ?>/<?php echo $projectid ?>.js"></script>
 
 
 <script type="text/javascript" src="jquery.js"></script>
@@ -20,17 +23,19 @@
 Lucky affluent actor asks to feast on giant 12.34" cheese-filled quiche in fjord.
 </div>
 
-<form id="inputForm">
 
 
 <div id="controls">
 
 <h2>Fontdeck</h2>
-
 <h3 id="projectgroup">Project ID</h3>
 <div class="group">
-<label><input type="text" id="projectid" name="projectid" onblur="refreshProject()" value="21000" size="6" /></label>
+<form action="<?php echo $_SERVER["PHP_SELF"] ?>">
+<label><input type="text" id="projectid" name="projectid" value="<?php echo $projectid ?>" size="6" /><input type="submit" value="Change" /></label>
+</form>
 </div>
+
+<form id="inputForm">
 
 <h2>Fonts</h2>
 
@@ -116,14 +121,15 @@ Lucky affluent actor asks to feast on giant 12.34" cheese-filled quiche in fjord
 <label id="reset"><input type="reset" value="Defaults" /></label>
 </div>
 
-</div> <!-- /#controls -->
 
 </form>
+</div> <!-- /#controls -->
+
 
 
 <div id="output">
 <p><a href="http://fontdeck.com/typefaces/all/tags/opentype">OpenType-enabled webfonts from Fontdeck</a></p>
-<p class="caveat">No fonts have all OpenType features, so just play around. Try the ligatures first.<strong>
+<p class="caveat">Not fonts have all OpenType features, so just play around. Try the ligatures first.<strong>
 Only supported in Firefox 4+, IE10, Webkit/Win.</strong></p>
 <div>
 -moz-font-feature-settings:&quot;<span id="mozfeatures" contenteditable="" onkeyup="refreshSample()"></span>&quot;;
