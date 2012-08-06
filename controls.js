@@ -74,24 +74,33 @@ function refreshFeatures() {
 };
 
 function refreshSample() {
-
+ 
   var sample = document.getElementById("sampleText");
-
+ 
   italic = document.getElementById("italic").checked ? "italic" : "";
   italicfamily = italic ? "'" + document.getElementById("font").value+" Italic', " : "";
   fontFamily = italicfamily + "'"+document.getElementById("font").value+"'";
   sample.style.fontFamily = fontFamily + ", sans-serif";
   sample.style.fontStyle = italic;
-
-  var mfeatures = document.getElementById("mozfeatures").innerHTML;
-  sample.style.MozFontFeatureSettings = "'" + mfeatures + "'";
+ 
   var wfeatures = document.getElementById("webkitfeatures").innerHTML;
+ 
+  if ("MozFontFeatureSettings" in sample.style) {
+    // old Firefox syntax
+    var mfeatures = document.getElementById("mozfeatures").innerHTML;
+    sample.style.MozFontFeatureSettings = "'" + mfeatures + "'";
+   
+    // if that failed, use standard syntax
+    if (sample.style.MozFontFeatureSettings == "") {
+      sample.style.MozFontFeatureSettings = wfeatures;
+    }
+  }
+ 
   document.getElementById("w3cfeatures").innerHTML = wfeatures;
   sample.style.msFontFeatureSettings = wfeatures;
   sample.style.oFontFeatureSettings = wfeatures;
   sample.style.WebkitFontFeatureSettings = wfeatures;
   sample.style.FontFeatureSettings = wfeatures;
-
 };
 
 function refreshFont() {
