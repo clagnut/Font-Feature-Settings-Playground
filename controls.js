@@ -86,12 +86,15 @@ function refreshSample() {
   var wfeatures = document.getElementById("webkitfeatures").innerHTML;
  
   if ("MozFontFeatureSettings" in sample.style) {
+    // first, reset the property to normal
+    sample.style.MozFontFeatureSettings = "normal";
+ 
     // old Firefox syntax
     var mfeatures = document.getElementById("mozfeatures").innerHTML;
     sample.style.MozFontFeatureSettings = "'" + mfeatures + "'";
-   
-    // if that failed, use standard syntax
-    if (sample.style.MozFontFeatureSettings == "") {
+ 
+    // if that failed setting will be "normal", use standard syntax
+    if (sample.style.MozFontFeatureSettings == "normal") {
       sample.style.MozFontFeatureSettings = wfeatures;
     }
   }
@@ -101,7 +104,7 @@ function refreshSample() {
   sample.style.oFontFeatureSettings = wfeatures;
   sample.style.WebkitFontFeatureSettings = wfeatures;
   sample.style.FontFeatureSettings = wfeatures;
-};
+}; 
 
 function refreshFont() {
     var typefaceSelect = document.getElementById("typeface");
